@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Master Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="score-box">Score: <span id="current-score">0</span></div>
+            <div class="score-box">High Score: <span id="high-score">0</span></div>
+        </header>
+
+        <div id="categories-screen" class="screen active">
+            <h1 class="main-title">JS Quiz <span class="highlight">Master</span></h1>
+            <p class="subtitle">Select a topic to start</p>
+            
+            <div class="categories-grid">
+                <button class="cat-btn" onclick="startQuiz('arrays')">Arrays</button>
+                <button class="cat-btn" onclick="startQuiz('functions')">Functions</button>
+                <button class="cat-btn" onclick="startQuiz('loops')">Loops</button>
+                <button class="cat-btn" onclick="startQuiz('conditions')">Conditions</button>
+                <button class="cat-btn" onclick="startQuiz('objects')">Objects</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <h2 id="category-title" class="highlight">CATEGORY</h2>
+                <div class="timer-circle">
+                    <span id="time-left">15</span>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h3 id="question-text">Question loading...</h3>
+                <div id="options-container" class="options-list">
+                </div>
+            </div>
+
+            <button id="next-btn" class="action-btn hidden" onclick="nextQuestion()">Next Question ➜</button>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <h1 class="highlight">Quiz Completed!</h1>
+            <p class="final-text">Your Final Score:</p>
+            <div class="final-score-box">
+                <span id="final-score">0</span> / <span id="total-questions">0</span>
+            </div>
+            <button class="action-btn restart" onclick="location.reload()">Play Again ↻</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
